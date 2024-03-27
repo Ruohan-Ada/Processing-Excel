@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.demo.mapper.BexcelMapper">
+
+    <resultMap id="BaseResultMap" type="cn.demo.model.domain.Bexcel">
+        <id property="A" column="A" jdbcType="VARCHAR"/>
+        <result property="B" column="B" jdbcType="VARCHAR"/>
+        <result property="C" column="C" jdbcType="VARCHAR"/>
+        <result property="D" column="D" jdbcType="VARCHAR"/>
+        <result property="E" column="E" jdbcType="VARCHAR"/>
+        <result property="F" column="F" jdbcType="VARCHAR"/>
+        <result property="aa" column="aa" jdbcType="INTEGER"/>
+        <result property="Trueaa" column="Trueaa" jdbcType="INTEGER"/>
+        <result property="bb" column="bb" jdbcType="INTEGER"/>
+        <result property="Truebb" column="Truebb" jdbcType="INTEGER"/>
+        <result property="cc" column="cc" jdbcType="INTEGER"/>
+        <result property="Truecc" column="Truecc" jdbcType="INTEGER"/>
+        <result property="dd" column="dd" jdbcType="INTEGER"/>
+        <result property="Truedd" column="Truedd" jdbcType="INTEGER"/>
+        <result property="ee" column="ee" jdbcType="INTEGER"/>
+        <result property="Trueee" column="Trueee" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        A,B,C,D,E,F,
+        aa,Trueaa,bb,Truebb,cc,Truecc,dd,Truedd,ee,Trueee
+    </sql>
+</mapper>
+

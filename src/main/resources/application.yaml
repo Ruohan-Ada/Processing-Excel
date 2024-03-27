@@ -1,0 +1,17 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  application:
+    name: excel-demo
+  profiles:
+     active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enable: true

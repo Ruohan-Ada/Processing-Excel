@@ -1,0 +1,78 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/EXCEL
+    username: root
+    password: password
+    type: com.alibaba.druid.pool.DruidDataSource
+    #配置连接池的相关的信息
+    druid:
+      initial-size: 2
+      min-idle: 2
+      max-active: 8
+      max-wait: 60000
+      min-evictable-idle-time-millis: 300000
+      time-between-eviction-runs-millis: 60000
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /gcrz/druid/*
+        reset-enable: true
+        login-username: admin
+        login-password: 123456
+        allow:
+        deny:
+
+      web-stat-filter:
+        enabled: true
+        exclusions: /druid/*,*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico
+        session-stat-enable: true
+        session-stat-max-count: 1000
+        url-pattern: /*
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 1500
+
+  mvc:
+    dispatch-options-request: true
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    local-cache-scope: SESSION
+    cache-enabled: true
+
+knife4j:
+  enable: true
+  setting:
+      enable-version: true
+
+
+logging:
+  charset:
+    file: UTF-8
+  file:
+    name: ./logs/demo.log
+
+  logback:
+    rollingpolicy:
+      file-name-pattern: './logs/demo.%d{yyyy-MM-dd}-%i.log.gz'
+      max-file-size: 5MB
+      max-history: 30
+      total-size-cap: 1GB
+
+
